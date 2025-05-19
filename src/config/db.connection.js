@@ -1,10 +1,10 @@
 import { connect } from "mongoose";
-import "dotenv/config"
+import "dotenv/config";
 
 export const initMongoDb = async () => {
-    try{
-        await connect(process.env.MONGO_URL)
-    } catch (error) {
-        throw new Error(error)
-    }
-}
+  try {
+    await connect(process.env.MONGO_URL);
+  } catch (error) {
+    throw new Error(error);
+  }
+};

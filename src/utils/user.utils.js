@@ -1,12 +1,13 @@
 import { fakerES as faker } from "@faker-js/faker";
+import { createHash } from "../utils/bcrypt.js";
 
-export const generateUser = () => {         //Genera usuarios tomando el modelo que creamos en model/user aleatoriamente
+export const mocksUsers = () => {
   return {
-    name: faker.person.fullName(),
+    first_name: faker.person.firstName(),
+    last_name: faker.person.lastName(),
     email: faker.internet.email(),
-    website: faker.internet.url(),
-    image: faker.image.url(),
+    password: createHash("coder123"),
+    role: Math.random() < 0.5 ? "user" : "admin",
+    pets: [],
   };
 };
-
-// console.log(generateUser())
